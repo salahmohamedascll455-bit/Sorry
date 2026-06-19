@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علشانك ✨</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transition: all 0.5s ease;
+        }
+        h2 { color: #ff4d6d; margin-bottom: 20px; }
+        input {
+            width: 80%;
+            padding: 12px;
+            border: 2px solid #ffb3c1;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 16px;
+            outline: none;
+        }
+        button {
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover { background: #ff758f; }
+        #secret-content { display: none; }
+        .heart { color: #ff4d6d; font-size: 50px; animation: beat .25s infinite alternate; }
+        @keyframes beat { to { transform: scale(1.2); } }
+        p { font-size: 18px; color: #590d22; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <!-- صاصا -->
+    <div class="container" id="login-box">
+        <h2>اكتبي كلمة السر للدخول 🔐</h2>
+        <input type="password" id="password-input" placeholder="اكتبي الباسوورد هنا...">
+        <br>
+        <button onclick="checkPassword()">افتحي</button>
+    </div>
+
+    <!-- صندوق رسالة المصالحة (مخفي وهيفتح بالباسوورد) -->
+    <div class="container" id="secret-content">
+        <div class="heart">❤️</div>
+        <h2>أنا آسف يا ست البنات.. ✨</h2>
+        <p>
+        حقك عليا يامشمش عارف اني زعلتك مني والله وانا مقدرش على زعلك انتي غاليه عندي حاولت اعمل طريقه مختلفه أصلحك بيها يارب تعجبك وصالحيني بقا وحشني المسا بتاعك اصفي بقا خلاص انا غلطت واستاهل زعلك بس متطوليش في زعلك عشان انتي وحشاني 😂😂♥️ يارب تعجبك .. <br>
+          .. <br>
+        </p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const userInput = document.getElementById('password-input').value;
+            
+            // ااكتب الباسوورد اللي أنت عايزه هنا مكان كلمة (سركما)
+            const correctPassword = "سركما"; 
+
+            if (userInput === correctPassword) {
+                document.getElementById('login-box').style.display = 'none';
+                document.getElementById('secret-content').style.display = 'block';
+            } else {
+                alert("الباسوورد غلط يا ست البنات.. فكري تاني! 🤔");
+            }
+        }
+    </script>
+</body>
+</html>
